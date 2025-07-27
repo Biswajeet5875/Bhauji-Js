@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { Play, Download } from 'lucide-react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState } from "react";
+import { Play, Download } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Hero = () => {
-  const [animatedText, setAnimatedText] = useState('');
-  const fullText = 'Code likho desi mein, JavaScript chalai Bhauji!';
+  const [animatedText, setAnimatedText] = useState("");
+  const fullText = "Code likho desi mein, JavaScript chalai Bhauji!";
 
   useEffect(() => {
     let index = 0;
@@ -21,7 +21,7 @@ const Hero = () => {
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
-    if (element) element.scrollIntoView({ behavior: 'smooth' });
+    if (element) element.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -71,8 +71,9 @@ const Hero = () => {
             transition={{ delay: 1.4 }}
             className="text-lg text-cream-100 mb-8 leading-relaxed max-w-md"
           >
-            भौजी.js - एक धमाकेदार Bhojpuri-style programming language! JavaScript को 
-            पूरे देसी अंदाज़ में लिखें। बियर पीकर code करने का मजा ही कुछ और है! 🍺💻
+            भौजी.js - एक धमाकेदार Bhojpuri-style programming language!
+            JavaScript को पूरे देसी अंदाज़ में लिखें। बियर पीकर code करने का मजा
+            ही कुछ और है! 🍺💻
           </motion.p>
 
           <motion.div
@@ -82,14 +83,14 @@ const Hero = () => {
             className="flex flex-col sm:flex-row gap-4"
           >
             <button
-              onClick={() => scrollToSection('install')}
+              onClick={() => scrollToSection("install")}
               className="group bg-gradient-to-r from-orange-400 to-red-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center space-x-2"
             >
               <Download size={20} />
               <span>Install Kare Bhauji</span>
             </button>
             <button
-              onClick={() => scrollToSection('playground')}
+              onClick={() => scrollToSection("playground")}
               className="group bg-gradient-to-r from-fuchsia-600 to-fuchsia-700 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center space-x-2 border-2 border-fuchsia-400"
             >
               <Play size={20} />
@@ -110,12 +111,17 @@ const Hero = () => {
             transition={{ duration: 2, repeat: Infinity }}
             className="w-96 h-96 bg-gradient-to-br from-orange-400 to-red-500 rounded-full flex items-center justify-center shadow-2xl"
           >
-            <div className="text-6xl"><img src='/3733310-removebg-preview.png'/></div>
+            <div className="text-6xl">
+              <img
+                src={`${import.meta.env.BASE_URL}3733310-removebg-preview.png`}
+                alt="Hero"
+              />
+            </div>
           </motion.div>
 
           <motion.div
             animate={{ rotate: 360 }}
-            transition={{ repeat: Infinity, duration: 6, ease: 'linear' }}
+            transition={{ repeat: Infinity, duration: 6, ease: "linear" }}
             className="absolute -top-32 right-0 w-24 h-24 bg-red-400 rounded-full flex items-center justify-center"
           >
             <span className="text-2xl">🍺</span>
@@ -132,15 +138,17 @@ const Hero = () => {
       >
         <div className="flex flex-wrap justify-center gap-6 text-center">
           {[
-            { value: '100%', label: 'Desi Swag' },
-            { value: '∞', label: 'Bindaas Level' },
-            { value: '🍺', label: 'Daaru Quota' },
+            { value: "100%", label: "Desi Swag" },
+            { value: "∞", label: "Bindaas Level" },
+            { value: "🍺", label: "Daaru Quota" },
           ].map((stat, i) => (
             <div
               key={i}
               className="bg-fuchsia-800/40 backdrop-blur-md rounded-xl p-5 border border-fuchsia-600 w-36 shadow-lg hover:scale-105 transition"
             >
-              <div className="text-3xl font-bold text-yellow-300">{stat.value}</div>
+              <div className="text-3xl font-bold text-yellow-300">
+                {stat.value}
+              </div>
               <div className="text-sm text-cream-100 mt-1">{stat.label}</div>
             </div>
           ))}
